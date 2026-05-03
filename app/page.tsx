@@ -244,7 +244,6 @@ export default function Portfolio() {
 
               <div className="text-base sm:text-lg text-gray-400 max-w-xl mb-10 h-28 sm:h-24 leading-relaxed">
                 Hi, I&apos;m <span className="text-white font-semibold">Himani Dhakad</span>. An aspiring{" "}
-                {/* FIXED MOBILE TYPEWRITER: Inline-grid strictly guarantees correct DOM nodes for mobile */}
                 <span className="inline-grid min-w-[160px]">
                   <AnimatePresence mode="popLayout">
                     <motion.span
@@ -282,7 +281,8 @@ export default function Portfolio() {
 
             <div className="flex lg:justify-end relative w-full h-full pb-10 pr-0 lg:pr-6 order-1 lg:order-2 justify-center mt-10 lg:mt-0">
               <div className="w-[90%] sm:w-[75%] lg:w-[85%] max-w-md bg-card border border-gray-800 rounded-[2.5rem] flex items-center justify-center overflow-hidden shadow-2xl relative z-0 p-2">
-                <SafeImage src="/Photos/profile.png" alt="Himani Dhakad" className="w-full h-auto rounded-[2.2rem]" objectFit="contain" />
+                {/* FIXED: Replaced "profile.png" with "Profile.png" to match the exact file case in Vercel/Linux */}
+                <SafeImage src="/Photos/Profile.png" alt="Himani Dhakad" className="w-full h-auto rounded-[2.2rem]" objectFit="contain" />
               </div>
 
               <div className="absolute -bottom-8 sm:-bottom-4 left-0 sm:left-10 lg:left-4 bg-[#0d0d12] border border-gray-800/80 p-4 sm:p-6 rounded-2xl shadow-2xl font-mono text-[10px] sm:text-xs z-20 backdrop-blur-sm max-w-[90vw] overflow-x-auto">
@@ -382,14 +382,13 @@ export default function Portfolio() {
             </div>
           </div>
 
-          {/* MORE PROJECTS WITH ZOOM MODAL */}
+          {/* MORE PROJECTS */}
           <div className="mt-24 md:mt-32 max-w-5xl mx-auto">
             <h3 className="text-3xl font-bold text-center mb-12 text-white">More Projects</h3>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
               {moreProjects.map((proj, idx) => (
                 <div key={idx} className="relative bg-card border border-gray-800 p-6 sm:p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 group flex flex-col">
                   
-                  {/* FIXED MOBILE TOUCH: Stop propagation and increase padding */}
                   <button 
                     type="button"
                     onClick={(e) => { e.preventDefault(); e.stopPropagation(); setZoomedImage(proj.archImage); }}
@@ -422,7 +421,6 @@ export default function Portfolio() {
           <h2 className="text-sm font-mono text-center text-gray-500 mb-2 uppercase tracking-widest">Capabilities</h2>
           <h3 className="text-4xl md:text-5xl font-extrabold text-center text-white mb-12">TECH STACK</h3>
           
-          {/* FIXED MOBILE TOUCH: z-20 to ensure it stays clickable above background items */}
           <div className="relative z-20 flex flex-wrap justify-center gap-2 sm:gap-3 mb-12 bg-card/50 p-2 rounded-3xl sm:rounded-full w-full sm:w-fit mx-auto border border-gray-800">
             {["All", "AI Engineer", "Software Engineer", "Data Analyst", "Automation Engineer"].map(tab => (
               <button 
@@ -513,7 +511,6 @@ export default function Portfolio() {
             
             <div className="flex justify-center lg:justify-start">
               <div className="w-[85%] sm:w-[60%] lg:w-[80%] max-w-sm aspect-[3/4] bg-card border border-gray-800 rounded-[2rem] flex items-center justify-center overflow-hidden shadow-2xl relative p-1">
-                {/* FIXED TYPO: EXACT PATH TO SIDEBAR FILE */}
                 <SafeImage src="/Photos/Himaniresume.png" alt="Himani Resume" className="w-full h-full rounded-[1.8rem]" objectFit="cover" />
               </div>
             </div>
@@ -529,7 +526,6 @@ export default function Portfolio() {
               </p>
               <div className="flex flex-wrap gap-4 w-full sm:w-auto">
                 
-                {/* FIXED TYPO: EXACT PATH TO SIDEBAR FILE */}
                 <button 
                   type="button"
                   onClick={(e) => { e.preventDefault(); e.stopPropagation(); setZoomedImage("/Photos/Himaniresume.png"); }} 
